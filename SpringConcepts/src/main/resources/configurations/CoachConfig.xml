@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<import resource="FeedbackConfig.xml" />
+
+	<bean id="myTrackCoach"
+		class="com.nineleaps.learning.SpringConcepts.TrackCoach">
+		<constructor-arg ref="trackFeedback" />
+	</bean>
+
+	<bean id="myBaseballCoach"
+		class="com.nineleaps.learning.SpringConcepts.BaseballCoach">
+		<constructor-arg ref="baseballFeedback" />
+	</bean>
+
+	<bean id="myCricketCoach"
+		class="com.nineleaps.learning.SpringConcepts.CricketCoach">
+		<property name="feedbackService" ref="cricketFeedback" />
+		<property name="information.email" value="abc@123" />
+		<property name="information.team" value="Mumbai Indians" />
+	</bean>
+
+
+</beans>
