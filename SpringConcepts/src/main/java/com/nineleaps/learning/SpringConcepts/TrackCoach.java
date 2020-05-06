@@ -1,7 +1,7 @@
 package com.nineleaps.learning.SpringConcepts;
 
 public class TrackCoach implements Coach {
-	
+
 	private FeedbackService feedbackService;
 
 	public TrackCoach(FeedbackService feedbackService) {
@@ -14,7 +14,15 @@ public class TrackCoach implements Coach {
 	}
 
 	public String getDailyFeedback() {
-		return "Wooah..."+feedbackService.getFeedback();
+		return "Wooah..." + feedbackService.getFeedback();
+	}
+
+	public void customInit() {
+		System.out.println("Startup");
+	}
+
+	public void customDestroy() {
+		System.out.println("clean up");
 	}
 
 }

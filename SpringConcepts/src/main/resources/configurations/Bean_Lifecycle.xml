@@ -9,16 +9,16 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <import resource="CoachConfig.xml"/>
-    
-    <bean id="staticDateMethod" class="com.nineleaps.learning.SpringConcepts.StaticDateManager"
-    factory-method="createInstance"/>
-    
-    
-    <bean id="dateMethod" class="com.nineleaps.learning.SpringConcepts.DateManager"/>
-    <bean id="createDateInstance" 
-    factory-bean="dateMethod"
-    factory-method="createInstance"/>
+    <bean id="myTrackCoach"
+		class="com.nineleaps.learning.SpringConcepts.TrackCoach" 
+		init-method="customInit" 
+		destroy-method="customDestroy" >
+		<constructor-arg ref="trackFeedback" />
+	</bean>
+	
+	<bean id="trackFeedback"
+		class="com.nineleaps.learning.SpringConcepts.PositiveFeedbackService">
+	</bean>
 	
 
 

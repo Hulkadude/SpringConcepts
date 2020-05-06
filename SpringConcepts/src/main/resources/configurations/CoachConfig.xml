@@ -17,15 +17,19 @@
 	</bean>
 
 	<bean id="myBaseballCoach"
-		class="com.nineleaps.learning.SpringConcepts.BaseballCoach">
-		<constructor-arg ref="baseballFeedback" />
+		class="com.nineleaps.learning.SpringConcepts.BaseballCoach"
+		c:feedbackService-ref="baseballFeedback">
+		<!-- <constructor-arg ref="baseballFeedback" /> -->
 	</bean>
 
 	<bean id="myCricketCoach"
-		class="com.nineleaps.learning.SpringConcepts.CricketCoach">
-		<property name="feedbackService" ref="cricketFeedback" />
-		<property name="information.email" value="abc@123" />
-		<property name="information.team" value="Mumbai Indians" />
+		class="com.nineleaps.learning.SpringConcepts.CricketCoach"
+		p:feedbackService-ref="cricketFeedback" p:information.email="abc@123"
+		p:information.team="Kolkata Knightriders">
+		<!-- <property name="feedbackService" ref="cricketFeedback" /> <property 
+			name="information.email" value="abc@123" /> <property name="information.team" 
+			value="Mumbai Indians" /> -->
+
 	</bean>
 
 

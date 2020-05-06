@@ -12,6 +12,15 @@ public class SetterDI {
 		System.out.println(coach.getDailyWorkout());
 		System.out.println(coach.getDailyFeedback());
 		System.out.println(coach.getDetails());
+		
+		StaticDateManager staticDateManager = context.getBean("staticDateMethod",StaticDateManager.class);
+		System.out.println("Using Static Factory Method : "+staticDateManager.getDate());
+		
+		DateManager dateManager = context.getBean("createDateInstance",DateManager.class);
+		System.out.println("Using Instance Factory Method : "+dateManager.getDate());
+		
+		
+		
 	}
 
 }
