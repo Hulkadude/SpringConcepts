@@ -31,6 +31,10 @@
 			value="Mumbai Indians" /> -->
 
 	</bean>
+	
+	<bean id="myGymCoach"
+		class="com.nineleaps.learning.SpringConcepts.services.coach_service.GymCoach" autowire="constructor">
+	</bean>
 
 
 </beans>

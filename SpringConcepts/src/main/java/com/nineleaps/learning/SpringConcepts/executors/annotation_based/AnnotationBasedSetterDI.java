@@ -14,8 +14,9 @@ public class AnnotationBasedSetterDI {
 		  System.out.println(coach.getDailyWorkout());
 		  System.out.println(coach.getDailyFeedback());
 		  
-		  ((ClassPathXmlApplicationContext)context).close();
-		 
+		 // ((ClassPathXmlApplicationContext)context).close();
+		  
+		  ((ClassPathXmlApplicationContext)context).registerShutdownHook();
 
 	}
 

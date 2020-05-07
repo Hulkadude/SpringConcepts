@@ -15,5 +15,27 @@
 	
 	<alias name="coachFeedback" alias="cricketFeedback"/>
 	<alias name="coachFeedback" alias="trackFeedback"/>
+	
+	<bean id="defaultFeedback" abstract="true">
+	<property name="feedback" value="Let's do one more rep...!!"/>
+	</bean>
+	
+	<bean id="ExpertFeedback" primary="true"
+		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.ExpertFeedbackService"
+		parent="defaultFeedback">
+	</bean>
+	
+	<bean id="NaiveFeedback"
+		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.NaiveFeedbackService"
+		parent="defaultFeedback">
+		<property name="feedback" value="I would also like to immitate...!!"/>
+	</bean>
+	
+	<bean id="GeneralFeedback" autowire-candidate="false"
+		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.GeneralFeedbackService"
+		parent="defaultFeedback">
+		<property name="feedback" value="Nicely Done...!!"/>
+	</bean>
+	
 
 </beans>
