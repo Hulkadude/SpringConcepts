@@ -1,4 +1,4 @@
-package com.nineleaps.learning.SpringConcepts;
+package com.nineleaps.learning.SpringConcepts.handler;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

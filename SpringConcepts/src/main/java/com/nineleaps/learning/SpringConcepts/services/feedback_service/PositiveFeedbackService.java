@@ -1,4 +1,4 @@
-package com.nineleaps.learning.SpringConcepts;
+package com.nineleaps.learning.SpringConcepts.services.feedback_service;
 
 public class PositiveFeedbackService implements FeedbackService {
 

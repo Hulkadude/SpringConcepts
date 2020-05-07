@@ -12,18 +12,18 @@
 	<import resource="FeedbackConfig.xml" />
 
 	<bean id="myTrackCoach"
-		class="com.nineleaps.learning.SpringConcepts.TrackCoach">
+		class="com.nineleaps.learning.SpringConcepts.services.coach_service.TrackCoach">
 		<constructor-arg ref="trackFeedback" />
 	</bean>
 
 	<bean id="myBaseballCoach"
-		class="com.nineleaps.learning.SpringConcepts.BaseballCoach"
+		class="com.nineleaps.learning.SpringConcepts.services.coach_service.BaseballCoach"
 		c:feedbackService-ref="baseballFeedback">
 		<!-- <constructor-arg ref="baseballFeedback" /> -->
 	</bean>
 
 	<bean id="myCricketCoach"
-		class="com.nineleaps.learning.SpringConcepts.CricketCoach"
+		class="com.nineleaps.learning.SpringConcepts.services.coach_service.CricketCoach"
 		p:feedbackService-ref="cricketFeedback" p:information.email="abc@123"
 		p:information.team="Kolkata Knightriders">
 		<!-- <property name="feedbackService" ref="cricketFeedback" /> <property 

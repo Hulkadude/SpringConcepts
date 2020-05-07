@@ -1,7 +1,9 @@
-package com.nineleaps.learning.SpringConcepts;
+package com.nineleaps.learning.SpringConcepts.executors.xml_config_based;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.nineleaps.learning.SpringConcepts.services.coach_service.Interface.Coach;
 
 public class BeanScopeDemo {
 

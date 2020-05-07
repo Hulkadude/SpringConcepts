@@ -1,4 +1,8 @@
-package com.nineleaps.learning.SpringConcepts;
+package com.nineleaps.learning.SpringConcepts.services.coach_service;
+
+import com.nineleaps.learning.SpringConcepts.model.Information;
+import com.nineleaps.learning.SpringConcepts.services.coach_service.Interface.Coach;
+import com.nineleaps.learning.SpringConcepts.services.feedback_service.FeedbackService;
 
 public class CricketCoach implements Coach {
 	

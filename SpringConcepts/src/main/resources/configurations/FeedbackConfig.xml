@@ -10,7 +10,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
     
 	<bean id="positiveFeedback" name="coachFeedback,baseballFeedback"
-		class="com.nineleaps.learning.SpringConcepts.PositiveFeedbackService">
+		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.PositiveFeedbackService">
 	</bean>
 	
 	<alias name="coachFeedback" alias="cricketFeedback"/>

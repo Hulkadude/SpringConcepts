@@ -11,11 +11,11 @@
     
     <import resource="CoachConfig.xml"/>
     
-    <bean id="staticDateMethod" class="com.nineleaps.learning.SpringConcepts.StaticDateManager"
+    <bean id="staticDateMethod" class="com.nineleaps.learning.SpringConcepts.handler.StaticDateManager"
     factory-method="createInstance"/>
     
     
-    <bean id="dateMethod" class="com.nineleaps.learning.SpringConcepts.DateManager"/>
+    <bean id="dateMethod" class="com.nineleaps.learning.SpringConcepts.handler.DateManager"/>
     <bean id="createDateInstance" 
     factory-bean="dateMethod"
     factory-method="createInstance"/>

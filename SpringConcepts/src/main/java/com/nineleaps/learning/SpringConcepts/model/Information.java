@@ -1,4 +1,4 @@
-package com.nineleaps.learning.SpringConcepts;
+package com.nineleaps.learning.SpringConcepts.model;
 
 public class Information {
 	private String email;
