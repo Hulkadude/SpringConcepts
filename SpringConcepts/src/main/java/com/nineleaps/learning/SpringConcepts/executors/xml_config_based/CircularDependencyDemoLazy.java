@@ -9,7 +9,7 @@ import com.nineleaps.learning.SpringConcepts.services.coach_service.CricketCoach
 public class CircularDependencyDemoLazy {
 
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("configurations/CircularDependencyConfigException.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("configurations/CircularDependencyConfigLazy.xml");
 		
 		/*
 		 * ArbitraryClassA arbitraryClassA =
