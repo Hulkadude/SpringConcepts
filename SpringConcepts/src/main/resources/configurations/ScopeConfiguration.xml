@@ -8,21 +8,9 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-
-	<import resource="FeedbackConfig.xml" />
-
-	<bean id="myTrackCoach"
-		class="com.nineleaps.learning.SpringConcepts.services.coach_service.TrackCoach"
-		init-method="customInit" destroy-method="customDestroy">
-		<constructor-arg>
-			<bean
-				class="com.nineleaps.learning.SpringConcepts.services.feedback_service.NaiveFeedbackService">
-				<property name="feedback"
-					value="I would also like to immitate...!!" />
-			</bean>
-		</constructor-arg>
-	</bean>
-
-
-
+    
+	<bean id="customScopeRegistration" class="com.nineleaps.learning.SpringConcepts.scope.CustomScopeRegistration"/>
+	
+	<bean id="customThradScopeRegistration" class="com.nineleaps.learning.SpringConcepts.scope.CustomScopeUsingSimpleThreadScope"/>
+	
 </beans>

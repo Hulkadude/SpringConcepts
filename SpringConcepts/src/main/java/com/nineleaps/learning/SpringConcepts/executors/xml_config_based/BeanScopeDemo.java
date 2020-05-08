@@ -9,9 +9,13 @@ public class BeanScopeDemo {
 
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("configurations/BeanScope.xml");
-		
-		Coach coach1 = context.getBean("myTrackCoach", Coach.class);
-		Coach coach2 = context.getBean("myTrackCoach", Coach.class);
+		/*
+		 * GenericApplicationContext context = new GenericApplicationContext(); new
+		 * GroovyBeanDefinitionReader(context).loadBeanDefinitions(
+		 * "configurations/BeanScope.groovy");
+		 */
+		Coach coach1 = context.getBean("myCustomScopeTrackCoach", Coach.class);
+		Coach coach2 = context.getBean("myCustomScopeTrackCoach", Coach.class);
 		
 		System.out.println("Same Reference: "+(coach1==coach2)+"\ncoach1: "+coach1+"\ncouch2: "+coach2);
 	}

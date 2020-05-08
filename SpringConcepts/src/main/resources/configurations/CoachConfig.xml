@@ -10,6 +10,7 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<import resource="FeedbackConfig.xml" />
+	<import resource="CollectionConfig.xml" />
 
 	<bean id="myTrackCoach"
 		class="com.nineleaps.learning.SpringConcepts.services.coach_service.TrackCoach">
@@ -30,11 +31,51 @@
 			name="information.email" value="abc@123" /> <property name="information.team" 
 			value="Mumbai Indians" /> -->
 
-	</bean>
-	
-	<bean id="myGymCoach"
-		class="com.nineleaps.learning.SpringConcepts.services.coach_service.GymCoach" autowire="constructor">
+		<constructor-arg type="int" value="28" />
+		<constructor-arg index="1" value="Male" />
+
 	</bean>
 
+	<bean id="myGymCoach"
+		class="com.nineleaps.learning.SpringConcepts.services.coach_service.GymCoach"
+		autowire="constructor">
+	</bean>
+
+	<bean id="myBasketballCoach"
+		class="com.nineleaps.learning.SpringConcepts.services.coach_service.BasketballCoach"
+		depends-on="dummyFeedback">
+	</bean>
+
+	<bean id="myDummyCoach"
+		class="com.nineleaps.learning.SpringConcepts.services.coach_service.DummyCoach"
+		parent="coachDefaultCollection">
+		<property name="properties">
+			<props merge="true">
+				<prop key="Name">Harsh</prop>
+			</props>
+		</property>
+
+
+		<property name="feedbacks">
+			<list merge="true">
+				<value>Keep up the good work</value>
+				<null />
+			</list>
+		</property>
+
+
+		<property name="contactDetails">
+			<map merge="true">
+				<entry key="Phone" value="9000000001" />
+			</map>
+		</property>
+
+
+		<property name="teams">
+			<set merge="true">
+				<value>Justice League</value>
+			</set>
+		</property>
+	</bean>
 
 </beans>

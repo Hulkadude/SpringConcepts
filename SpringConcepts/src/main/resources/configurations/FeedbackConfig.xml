@@ -16,6 +16,10 @@
 	<alias name="coachFeedback" alias="cricketFeedback"/>
 	<alias name="coachFeedback" alias="trackFeedback"/>
 	
+	<bean id="dummyFeedback"
+		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.DummyFeedbackService" init-method="setFeedback">
+	</bean>
+	
 	<bean id="defaultFeedback" abstract="true">
 	<property name="feedback" value="Let's do one more rep...!!"/>
 	</bean>

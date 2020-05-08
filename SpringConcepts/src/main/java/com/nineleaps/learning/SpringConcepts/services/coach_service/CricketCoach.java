@@ -7,10 +7,17 @@ import com.nineleaps.learning.SpringConcepts.services.feedback_service.FeedbackS
 public class CricketCoach implements Coach {
 	
 	private FeedbackService feedbackService;
+	private int age;
+	private String gender;
 	private Information information = new Information();
 
 	public CricketCoach() {}
-	
+
+	public CricketCoach(int age, String gender) {
+		this.age = age;
+		this.gender = gender;
+	}
+
 	public String getDailyWorkout() {
 		return "Practice bowling for 15 min";
 	}
@@ -20,7 +27,8 @@ public class CricketCoach implements Coach {
 	}
 	
 	public String getDetails() {
-		return getInformation().toString();
+		
+		return "Age: "+age+"\nGender: "+gender+"\n"+getInformation().toString();
 	}
 
 	public void setFeedbackService(FeedbackService feedbackService) {

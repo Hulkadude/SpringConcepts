@@ -19,6 +19,8 @@
     <bean id="createDateInstance" 
     factory-bean="dateMethod"
     factory-method="createInstance"/>
+    
+    <bean id="innerStaticClass" class="com.nineleaps.learning.SpringConcepts.handler.StaticInnerClass$DateProvider"/>
 	
 
 

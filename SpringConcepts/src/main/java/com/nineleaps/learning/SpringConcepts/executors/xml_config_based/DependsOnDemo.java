@@ -6,18 +6,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.nineleaps.learning.SpringConcepts.services.coach_service.Interface.Coach;
 
-public class BeanLifecycle {
+public class DependsOnDemo {
 
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("configurations/Bean_Lifecycle.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("configurations/ApplicationContext.xml");
 		
-		Coach coach = context.getBean("myTrackCoach", Coach.class);
+		Coach coach = context.getBean("myBasketballCoach", Coach.class);
 		
 		System.out.println(coach.getDailyWorkout());
 		
 		System.out.println(coach.getDailyFeedback());
-		
-		((ClassPathXmlApplicationContext)context).registerShutdownHook();
 		
 	}
 

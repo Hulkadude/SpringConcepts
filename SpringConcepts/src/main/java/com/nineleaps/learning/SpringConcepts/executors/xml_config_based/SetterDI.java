@@ -18,7 +18,6 @@ public class SetterDI {
 		System.out.println(coach.getDetails());
 		
 		
-		
 	}
 
 }

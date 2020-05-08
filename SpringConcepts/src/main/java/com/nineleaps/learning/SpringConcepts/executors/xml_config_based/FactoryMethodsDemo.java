@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.nineleaps.learning.SpringConcepts.handler.DateManager;
 import com.nineleaps.learning.SpringConcepts.handler.StaticDateManager;
+import com.nineleaps.learning.SpringConcepts.handler.StaticInnerClass;
 import com.nineleaps.learning.SpringConcepts.services.coach_service.CricketCoach;
 
 public class FactoryMethodsDemo {
@@ -17,7 +18,8 @@ public class FactoryMethodsDemo {
 		DateManager dateManager = context.getBean("createDateInstance",DateManager.class);
 		System.out.println("Using Instance Factory Method : "+dateManager.getDate());
 		
-		
+		StaticInnerClass.DateProvider dateProvider = context.getBean("innerStaticClass",StaticInnerClass.DateProvider.class);
+		System.out.println("Using inner static class : "+dateProvider.getDate());
 		
 	}
 
