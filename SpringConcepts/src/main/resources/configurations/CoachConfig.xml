@@ -22,6 +22,17 @@
 		c:feedbackService-ref="baseballFeedback">
 		<!-- <constructor-arg ref="baseballFeedback" /> -->
 	</bean>
+	
+	<bean id="MethodReplacer" class="com.nineleaps.learning.SpringConcepts.handler.ReplacementMethod"/>
+	
+		
+	<bean id="myReplacedBaseballCoach"
+		class="com.nineleaps.learning.SpringConcepts.services.coach_service.BaseballCoach"
+		c:feedbackService-ref="baseballFeedback">
+		<replaced-method name="getDailyWorkout" replacer="MethodReplacer"></replaced-method>
+	</bean>
+	
+	
 
 	<bean id="myCricketCoach"
 		class="com.nineleaps.learning.SpringConcepts.services.coach_service.CricketCoach"
@@ -35,6 +46,13 @@
 		<constructor-arg index="1" value="Male" />
 
 	</bean>
+	
+	
+	<bean id="myFootballCoach"
+		class="com.nineleaps.learning.SpringConcepts.services.coach_service.FootballCoach">
+		<lookup-method name="createFeedbackService" bean="NaiveFeedback" />
+	</bean>
+	
 
 	<bean id="myGymCoach"
 		class="com.nineleaps.learning.SpringConcepts.services.coach_service.GymCoach"
