@@ -4,21 +4,24 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import com.nineleaps.learning.SpringConcepts.services.coach_service.Interface.Coach;
 import com.nineleaps.learning.SpringConcepts.services.feedback_service.FeedbackService;
 
 @Component
-@Scope("singleton")							//Default scope
+@Scope("singleton")	
+//Default scope
 public class TennisCoach implements Coach {
 
 	private FeedbackService feedbackService;
 	
 	
 	@Inject
-	public TennisCoach(FeedbackService feedbackService) {
+	public TennisCoach(@Qualifier(value="negativeFeedbackService")FeedbackService feedbackService) {
 		this.feedbackService = feedbackService;
 	}
 

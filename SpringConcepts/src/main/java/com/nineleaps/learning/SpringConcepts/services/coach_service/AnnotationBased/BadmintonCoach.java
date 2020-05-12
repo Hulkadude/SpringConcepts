@@ -1,11 +1,13 @@
 package com.nineleaps.learning.SpringConcepts.services.coach_service.AnnotationBased;
 
+import com.nineleaps.learning.SpringConcepts.Annotations.FeedQualifier;
 import com.nineleaps.learning.SpringConcepts.services.coach_service.Interface.Coach;
 import com.nineleaps.learning.SpringConcepts.services.feedback_service.FeedbackService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import com.nineleaps.learning.SpringConcepts.Annotations.FeedQualifier;
 
 @Component
 public class BadmintonCoach implements Coach {
@@ -22,7 +24,7 @@ public class BadmintonCoach implements Coach {
 	}
 	
 	@Autowired
-	public void setFeedbackService(FeedbackService feedbackService) {
+	public void setFeedbackService(@FeedQualifier("negativeFeedbackService") FeedbackService feedbackService) {
 		this.feedbackService = feedbackService;
 	}
 	
