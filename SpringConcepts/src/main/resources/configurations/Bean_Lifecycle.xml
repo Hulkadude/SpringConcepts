@@ -10,15 +10,21 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<import resource="FeedbackConfig.xml" />
+	
+	<bean
+		class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<property name="locations"
+			value="classpath:properties/feedback.properties" />
+	</bean>
 
+	
 	<bean id="myTrackCoach"
 		class="com.nineleaps.learning.SpringConcepts.services.coach_service.TrackCoach"
 		init-method="customInit" destroy-method="customDestroy">
 		<constructor-arg>
 			<bean
 				class="com.nineleaps.learning.SpringConcepts.services.feedback_service.NaiveFeedbackService">
-				<property name="feedback"
-					value="I would also like to immitate...!!" />
+				<property name="feedback" value="${coach.naive.feedback}" />
 			</bean>
 		</constructor-arg>
 	</bean>

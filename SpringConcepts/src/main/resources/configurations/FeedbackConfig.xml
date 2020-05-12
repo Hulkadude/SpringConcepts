@@ -8,38 +8,44 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-    
+
+
+	<context:property-override location="classpath:properties/feedbackOverride.properties"/>
+
 	<bean id="positiveFeedback" name="coachFeedback,baseballFeedback"
 		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.PositiveFeedbackService">
 	</bean>
-	
-	<alias name="coachFeedback" alias="cricketFeedback"/>
-	<alias name="coachFeedback" alias="trackFeedback"/>
-	
+
+	<alias name="coachFeedback" alias="cricketFeedback" />
+	<alias name="coachFeedback" alias="trackFeedback" />
+
 	<bean id="dummyFeedback"
-		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.DummyFeedbackService" init-method="setFeedback">
+		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.DummyFeedbackService"
+		init-method="setFeedback">
 	</bean>
-	
+
 	<bean id="defaultFeedback" abstract="true">
-	<property name="feedback" value="Let's do one more rep...!!"/>
+		<property name="feedback" value="Let's do one more rep...!!" />
 	</bean>
-	
+
 	<bean id="ExpertFeedback" primary="true"
 		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.ExpertFeedbackService"
 		parent="defaultFeedback">
 	</bean>
-	
+
 	<bean id="NaiveFeedback"
 		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.NaiveFeedbackService"
 		parent="defaultFeedback" scope="prototype">
-		<property name="feedback" value="I would also like to immitate...!!"/>
+		<property name="feedback"
+			value="${coach.naive.feedback}" />
 	</bean>
 	
+
 	<bean id="GeneralFeedback" autowire-candidate="false"
 		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.GeneralFeedbackService"
 		parent="defaultFeedback">
-		<property name="feedback" value="Nicely Done...!!"/>
+		<property name="feedback" value="Nicely Done...!!" />
 	</bean>
-	
+
 
 </beans>

@@ -1,9 +1,11 @@
 package com.nineleaps.learning.SpringConcepts.services.coach_service.AnnotationBased;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.inject.Inject;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import javax.annotation.*;
 
 import com.nineleaps.learning.SpringConcepts.services.coach_service.Interface.Coach;
 import com.nineleaps.learning.SpringConcepts.services.feedback_service.FeedbackService;
@@ -15,7 +17,7 @@ public class TennisCoach implements Coach {
 	private FeedbackService feedbackService;
 	
 	
-	@Autowired
+	@Inject
 	public TennisCoach(FeedbackService feedbackService) {
 		this.feedbackService = feedbackService;
 	}
