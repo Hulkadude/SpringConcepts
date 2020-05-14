@@ -1,13 +1,12 @@
 package com.nineleaps.learning.SpringConcepts.services.coach_service.AnnotationBased;
 
 import javax.annotation.Resource;
-
-import org.springframework.stereotype.Component;
+import javax.inject.Named;
 
 import com.nineleaps.learning.SpringConcepts.services.coach_service.Interface.Coach;
 import com.nineleaps.learning.SpringConcepts.services.feedback_service.FeedbackService;
 
-@Component
+@Named
 public class HockeyCoach implements Coach {
 
 	private FeedbackService feedbackService;

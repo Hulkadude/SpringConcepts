@@ -1,20 +1,21 @@
 package com.nineleaps.learning.SpringConcepts.executors.xml_config_based;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.nineleaps.learning.SpringConcepts.Events.EmailService;
 import com.nineleaps.learning.SpringConcepts.services.coach_service.Interface.Coach;
 
-public class BeanInheritenceAndAutowiringCollaborationDemo {
+public class EventDemo {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("configurations/applicationContext.xml");
 
-		Coach coach = context.getBean("myGymCoach", Coach.class);
+		EmailService emailService = context.getBean("emailService", EmailService.class);
+
+		emailService.sendEmail("known.hacker@example.org", "This is blocked email");
 		
-		System.out.println(coach.getDailyWorkout());
-		System.out.println(coach.getDailyFeedback());
-		
+		emailService.sendEmail("known.trusted@example.org", "This is blocked email");
+
 	}
 
 }

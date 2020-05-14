@@ -11,6 +11,7 @@
 
 
 	<context:property-override location="classpath:properties/feedbackOverride.properties"/>
+	<context:property-placeholder location="classpath:properties/feedback.properties"/>
 
 	<bean id="positiveFeedback" name="coachFeedback,baseballFeedback"
 		class="com.nineleaps.learning.SpringConcepts.services.feedback_service.PositiveFeedbackService">

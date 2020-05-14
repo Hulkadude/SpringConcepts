@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @PropertySource("classpath:properties/feedback.properties")
 public class NegativeFeedbackService implements FeedbackService {
 
-	@Value("${coach.naive.feedback}")
+	@Value("Swimming feedback")
 	private String feedback;
 	
 	public String getFeedback() {
